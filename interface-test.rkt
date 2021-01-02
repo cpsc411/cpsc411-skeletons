@@ -5,7 +5,7 @@
    cpsc411/test-suite/utils)
 
   (check-import-list
-   "main.rkt"
+   "compiler.rkt"
    '(uniquify
      sequentialize-let
      canonicalize-bind
