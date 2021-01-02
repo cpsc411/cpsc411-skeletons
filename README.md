@@ -1,7 +1,11 @@
-# CPSC 411 Skeletons
-The branches of this repo define skeleton files for the CPSC411 project
-milestones.
-You should fork this repo, make sure your new repo is private, and submit your
-work by pushing to the appropriate branch for each milestone.
-For example, checkout branch `milestone-1` to get started, and be sure to merge
-and push all your work to that branch.
+# CPSC 411 Assignment 0 Skeleton
+This branch provides the skeleton for CPSC 411 Assignment 0.
+
+When submitting, you should ensure the name of the `fact.rkt` file and the
+provides from that file are the same as in this commit.
+You may change the code base in any other way, including moving code to other
+files, as long as `fact.rkt` reprovides the appropriate functions.
+You can check this is the case by running `raco test interface-test.rkt`.
+
+To submit, make sure you most recent work is merged into this branch and this
+branch is pushed.
