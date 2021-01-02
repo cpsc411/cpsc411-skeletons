@@ -6,7 +6,8 @@
 
   (check-import-list
    "compiler.rkt"
-   '(uniquify
+   '(check-values-lang
+     uniquify
      sequentialize-let
      canonicalize-bind
      select-instructions
@@ -18,4 +19,7 @@
      patch-instructions
      implement-fvars
      check-paren-x64
-     generate-x64)))
+     generate-x64
+
+     interp-values-lang
+     interp-paren-x64)))
