@@ -5,7 +5,7 @@
    cpsc411/test-suite/utils)
 
   (check-import-list
-   "main.rkt"
+   "compiler.rkt"
    '(check-paren-x64
      interp-paren-x64
      generate-x64
