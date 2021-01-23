@@ -105,8 +105,9 @@
      flatten-begins
      patch-instructions
      implement-fvars
-     check-paren-x64
-     generate-x64)
+     generate-x64
+     wrap-x64-run-time
+     wrap-x64-boilerplate)
     uncover-locals
     assign-fvars
     replace-locations
