@@ -74,16 +74,16 @@
   (define (program->x64 p)
     (match p
       [`(begin ,s ...)
-       (TODO ...)]))
+       (TODO "generate-x64")]))
 
   (define (statement->x64 s)
-    (TODO ...))
+    (TODO "generate-x64"))
 
   (define (loc->x64 loc)
-    (TODO ...))
+    (TODO "generate-x64"))
 
   (define (binop->ins b)
-    (TODO ...))
+    (TODO "generate-x64"))
 
   (program->x64 p))
 
