@@ -101,14 +101,15 @@
      sequentialize-let
      canonicalize-bind
      select-instructions
-     uncover-locals
-     assign-fvars
-     replace-locations
      assign-homes
      flatten-begins
      patch-instructions
      implement-fvars
      check-paren-x64
      generate-x64)
+    uncover-locals
+    assign-fvars
+    replace-locations
+    check-paren-x64
     interp-values-lang
     interp-paren-x64)))
