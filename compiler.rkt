@@ -30,7 +30,7 @@
  compile-a3)
 
 ;; TODO: Fill in.
-;; You might want to reuse check-paren-x64 and generate-x64 from milestone-1
+;; You'll want to merge milestone-2 code in
 
 (module+ test
   (require
