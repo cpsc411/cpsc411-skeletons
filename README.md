@@ -1,8 +1,11 @@
-# CPSC 411 Skeletons
-The branches of this repo define skeleton files for the CPSC411 project
-milestones.
-You should be provisioned a private fork of this repo to start from and submit
-your project.
-Submit your work by pushing to the appropriate branch for each milestone.
-For example, checkout branch `assignment-0` to get started, and be sure to merge
-and push all your work to that branch.
+# CPSC 411 Milestone 3 Skeleton
+This branch provides the skeleton for CPSC 411 Milestone 3.
+
+When submitting, you should ensure the name of the `compiler.rkt` file and the
+provides from that file are the same as in this commit.
+You may change the code base in any other way, including moving code to other
+files, as long as `compiler.rkt` reprovides the appropriate functions.
+You can check this is the case by running `raco test interface-test.rkt`.
+
+To submit, make sure you most recent work is merged into this branch and this
+branch is pushed.
