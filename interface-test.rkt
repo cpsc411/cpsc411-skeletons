@@ -6,11 +6,10 @@
 
   (check-import-list
    "compiler.rkt"
-   '(interp-paren-x64
-     check-paren-x64
+   '(link-paren-x64
+     interp-paren-x64
      interp-values-lang
 
-     check-values-lang
      uniquify
      sequentialize-let
      canonicalize-bind
@@ -21,11 +20,10 @@
      assign-registers
      replace-locations
      assign-homes-opt
-     assign-homes
-     flatten-begins
+     optimize-predicates
+     expose-basic-blocks
+     resolve-predicates
+     flatten-program
      patch-instructions
      implement-fvars
-     generate-x64
-
-     compile-a2
-     compile-a3)))
+     generate-x64)))
