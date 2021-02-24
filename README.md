@@ -1,5 +1,5 @@
-# CPSC 411 Milestone 4 Skeleton
-This branch provides the skeleton for CPSC 411 Milestone 4.
+# CPSC 411 Milestone 5 Skeleton
+This branch provides the skeleton for CPSC 411 Milestone 5.
 
 When submitting, you should ensure the name of the `compiler.rkt` file and the
 provides from that file are the same as in this commit.
