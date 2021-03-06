@@ -52,12 +52,13 @@
     impose-calling-conventions
     canonicalize-bind
     select-instructions
-    ;uncover-locals
-    ;undead-analysis
-    ;conflict-analysis
-    ;assign-registers
-    ;replace-locations
-    assign-homes-opt
+    ;; Need to expand these out to test them individually.
+    uncover-locals
+    undead-analysis
+    conflict-analysis
+    assign-registers
+    replace-locations
+    ;assign-homes-opt
     optimize-predicates
     expose-basic-blocks
     resolve-predicates
