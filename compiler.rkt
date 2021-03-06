@@ -2,7 +2,7 @@
 
 (require
  cpsc411/compiler-lib
- cpsc411/2c-run-time)
+ cpsc411/ptr-run-time)
 
 (provide
  check-values-lang
@@ -11,39 +11,43 @@
  impose-calling-conventions
  canonicalize-bind
  select-instructions
- assign-homes-opt
  uncover-locals
  undead-analysis
  conflict-analysis
+ assign-call-undead-variables
+ allocate-frames
  assign-registers
  replace-locations
+ assign-frame-variables
+ implement-fvars
  optimize-predicates
  expose-basic-blocks
  resolve-predicates
  flatten-program
  patch-instructions
- implement-fvars
 
  generate-x64
 
- interp-paren-x64
- link-paren-x64)
+ interp-paren-x64)
 
 ;; TODO: Fill in.
-;; You'll want to merge milestone-4 code in
+;; You'll want to merge milestone-5 code in
 
 (module+ test
   (require
    rackunit
    rackunit/text-ui
    cpsc411/test-suite/utils
-   cpsc411/test-suite/public/a5
-   errortrace)
+   cpsc411/test-suite/public/a6
+   #;errortrace)
 
   ;; You can modify this pass list, e.g., by adding other
   ;; optimization, debugging, or validation passes.
   ;; Doing this may provide additional debugging info when running the rest
   ;; suite.
+  ;; If you do replace modify this list, be sure to replace the function's
+  ;; counterpart in the arguments for a6-public-test-suite, as it may rely on
+  ;; pointer equality between functions to navigate the current-pass-list.
   (current-pass-list
    (list
     check-values-lang
@@ -52,33 +56,30 @@
     impose-calling-conventions
     canonicalize-bind
     select-instructions
-    ;; Need to expand these out to test them individually.
     uncover-locals
     undead-analysis
     conflict-analysis
+    assign-call-undead-variables
+    allocate-frames
     assign-registers
     replace-locations
-    ;assign-homes-opt
+    assign-frame-variables
+    implement-fvars
     optimize-predicates
     expose-basic-blocks
     resolve-predicates
     flatten-program
     patch-instructions
-    implement-fvars
-
-    ;check-paren-x64
     generate-x64
-
     wrap-x64-run-time
     wrap-x64-boilerplate))
 
   ;; Toggle to #f to enable fragile tests
   (parameterize ([current-enable-grading #t])
     (run-tests
-     (a5-public-test-suite
+     (a6-public-test-suite
       (current-pass-list)
 
-      link-paren-x64
       interp-paren-x64
 
       check-values-lang
@@ -90,13 +91,15 @@
       uncover-locals
       undead-analysis
       conflict-analysis
+      assign-call-undead-variables
+      allocate-frames
       assign-registers
       replace-locations
-      assign-homes-opt
+      assign-frame-variables
+      implement-fvars
       optimize-predicates
       expose-basic-blocks
       resolve-predicates
       flatten-program
       patch-instructions
-      implement-fvars
       generate-x64))))
