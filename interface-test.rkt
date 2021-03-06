@@ -12,20 +12,21 @@
      impose-calling-conventions
      canonicalize-bind
      select-instructions
-     assign-homes-opt
      uncover-locals
      undead-analysis
      conflict-analysis
+     assign-call-undead-variables
+     allocate-frames
      assign-registers
      replace-locations
+     assign-frame-variables
+     implement-fvars
      optimize-predicates
      expose-basic-blocks
      resolve-predicates
      flatten-program
      patch-instructions
-     implement-fvars
 
      generate-x64
 
-     interp-paren-x64
-     link-paren-x64)))
+     interp-paren-x64)))
