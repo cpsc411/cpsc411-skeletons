@@ -62,8 +62,8 @@
     assign-call-undead-variables
     allocate-frames
     assign-registers
-    replace-locations
     assign-frame-variables
+    replace-locations
     implement-fvars
     optimize-predicates
     expose-basic-blocks
@@ -94,8 +94,8 @@
       assign-call-undead-variables
       allocate-frames
       assign-registers
-      replace-locations
       assign-frame-variables
+      replace-locations
       implement-fvars
       optimize-predicates
       expose-basic-blocks
