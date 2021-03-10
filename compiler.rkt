@@ -64,8 +64,8 @@
     assign-registers
     assign-frame-variables
     replace-locations
-    implement-fvars
     optimize-predicates
+    implement-fvars
     expose-basic-blocks
     resolve-predicates
     flatten-program
@@ -96,8 +96,8 @@
       assign-registers
       assign-frame-variables
       replace-locations
-      implement-fvars
       optimize-predicates
+      implement-fvars
       expose-basic-blocks
       resolve-predicates
       flatten-program
