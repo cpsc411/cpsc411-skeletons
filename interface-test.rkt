@@ -6,8 +6,12 @@
 
   (check-import-list
    "compiler.rkt"
-   '(check-values-lang
+   '(interp-paren-x64
+     check-exprs-lang
      uniquify
+     implement-safe-primops
+     specify-representation
+     remove-complex-opera*
      sequentialize-let
      impose-calling-conventions
      canonicalize-bind
@@ -20,13 +24,10 @@
      assign-registers
      assign-frame-variables
      replace-locations
-     implement-fvars
      optimize-predicates
+     implement-fvars
      expose-basic-blocks
      resolve-predicates
      flatten-program
      patch-instructions
-
-     generate-x64
-
-     interp-paren-x64)))
+     generate-x64)))
