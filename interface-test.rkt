@@ -6,8 +6,7 @@
 
   (check-import-list
    "compiler.rkt"
-   '(interp-paren-x64
-     check-exprs-lang
+   '(check-exprs-lang
      uniquify
      implement-safe-primops
      specify-representation
@@ -16,6 +15,7 @@
      impose-calling-conventions
      canonicalize-bind
      select-instructions
+     expose-allocation-pointer
      uncover-locals
      undead-analysis
      conflict-analysis
@@ -30,4 +30,5 @@
      resolve-predicates
      flatten-program
      patch-instructions
+     implement-mops
      generate-x64)))

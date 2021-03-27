@@ -5,8 +5,6 @@
  cpsc411/ptr-run-time)
 
 (provide
- interp-paren-x64
-
  check-exprs-lang
  uniquify
  implement-safe-primops
@@ -16,6 +14,7 @@
  impose-calling-conventions
  canonicalize-bind
  select-instructions
+ expose-allocation-pointer
  uncover-locals
  undead-analysis
  conflict-analysis
@@ -30,17 +29,18 @@
  resolve-predicates
  flatten-program
  patch-instructions
+ implement-mops
  generate-x64)
 
 ;; TODO: Fill in.
-;; You'll want to merge milestone-6 code in
+;; You'll want to merge milestone-7 code in
 
 (module+ test
   (require
    rackunit
    rackunit/text-ui
    cpsc411/test-suite/utils
-   cpsc411/test-suite/public/a7
+   cpsc411/test-suite/public/a8
    #;errortrace)
 
   ;; You can modify this pass list, e.g., by adding other
@@ -61,6 +61,7 @@
     impose-calling-conventions
     canonicalize-bind
     select-instructions
+    expose-allocation-pointer
     uncover-locals
     undead-analysis
     conflict-analysis
@@ -75,6 +76,7 @@
     resolve-predicates
     flatten-program
     patch-instructions
+    implement-mops
     generate-x64
     wrap-x64-boilerplate
     wrap-x64-run-time))
@@ -82,10 +84,8 @@
   ;; Toggle to #f to enable fragile tests
   (parameterize ([current-enable-grading #t])
     (run-tests
-     (a7-public-test-suite
+     (a8-public-test-suite
       (current-pass-list)
-
-      interp-paren-x64
 
       check-exprs-lang
       uniquify
@@ -96,6 +96,7 @@
       impose-calling-conventions
       canonicalize-bind
       select-instructions
+      expose-allocation-pointer
       uncover-locals
       undead-analysis
       conflict-analysis
@@ -110,4 +111,5 @@
       resolve-predicates
       flatten-program
       patch-instructions
+      implement-mops
       generate-x64))))
