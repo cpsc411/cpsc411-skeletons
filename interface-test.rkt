@@ -9,6 +9,15 @@
    '(check-exprs-lang
      uniquify
      implement-safe-primops
+     implement-safe-call
+     define->letrec
+     optimize-direct-calls
+     dox-lambdas
+     uncover-free
+     convert-closures
+     optimize-known-calls
+     hoist-lambdas
+     implement-closures
      specify-representation
      remove-complex-opera*
      sequentialize-let
