@@ -49,7 +49,7 @@
    rackunit
    rackunit/text-ui
    cpsc411/test-suite/utils
-   cpsc411/test-suite/public/a9
+   cpsc411/test-suite/public/a11
    #;errortrace)
 
   ;; You can modify this pass list, e.g., by adding other
@@ -100,43 +100,7 @@
     wrap-x64-run-time))
 
   ;; Toggle to #f to enable fragile tests
+  ;; Assumes `current-pass-list` can compile Exprs-lang-v9.
   (parameterize ([current-enable-grading #t])
     (run-tests
-     (a9-public-test-suite
-      (current-pass-list)
-
-      check-exprs-lang
-      uniquify
-      implement-safe-primops
-      implement-safe-call
-      define->letrec
-      optimize-direct-calls
-      dox-lambdas
-      uncover-free
-      convert-closures
-      optimize-known-calls
-      hoist-lambdas
-      implement-closures
-      specify-representation
-      remove-complex-opera*
-      sequentialize-let
-      impose-calling-conventions
-      canonicalize-bind
-      select-instructions
-      expose-allocation-pointer
-      uncover-locals
-      undead-analysis
-      conflict-analysis
-      assign-call-undead-variables
-      allocate-frames
-      assign-registers
-      assign-frame-variables
-      replace-locations
-      optimize-predicates
-      implement-fvars
-      expose-basic-blocks
-      resolve-predicates
-      flatten-program
-      patch-instructions
-      implement-mops
-      generate-x64))))
+     (a11-public-test-suite))))
