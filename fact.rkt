@@ -1,6 +1,6 @@
 #lang racket
 (require rackunit)
-(provide FACT_S)
+(provide FACT_S compile execute)
 
 ; String -> void
 ; Raises an error with str as the error message.
