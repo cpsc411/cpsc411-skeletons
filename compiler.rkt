@@ -13,15 +13,18 @@
 (define-syntax-rule (TODO stx)
   (error "unfinished skeleton"))
 
+;; Optional; if you choose not to complete, implement a stub that returns the input
 (define (check-paren-x64-init p)
   (TODO ...))
 
+;; Optional; if you choose not to complete, implement a stub that returns the input
 (define (check-paren-x64-syntax p)
   (TODO ...))
 
 (define (check-paren-x64 p)
   (check-paren-x64-init (check-paren-x64-syntax p)))
 
+;; Optional; if you choose not to complete, implement a stub that returns a valid exit code
 (define (interp-paren-x64 p)
   (define (eval-instruction-sequence regfile s)
     (if (empty? s)
