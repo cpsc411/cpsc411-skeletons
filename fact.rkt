@@ -22,12 +22,12 @@
 
 ; An x64 Program
 ;; Copy the x64 program implementing fact.s into the here string, between the #<<EOS EOF.
-(define FACT_S (TODO #<<EOS
+(define FACT_S #<<EOS
 Fill in with the x64 program implementing fact.s,
 represented as a string. You may want to use a "here string", as demonstrated here.
 Consult the Racket documentation to better understand how here strings work.
 EOS
-))
+)
 
 ; x64 Program -> File name
 ; Takes an x64 Program, compiles it to an executable, and returns the name of
