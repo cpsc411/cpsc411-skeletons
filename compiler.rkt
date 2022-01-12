@@ -12,7 +12,7 @@
  remove-complex-opera*
  sequentialize-let
  impose-calling-conventions
- canonicalize-bind
+ normalize-bind
  select-instructions
  expose-allocation-pointer
  uncover-locals
@@ -59,7 +59,7 @@
     remove-complex-opera*
     sequentialize-let
     impose-calling-conventions
-    canonicalize-bind
+    normalize-bind
     select-instructions
     expose-allocation-pointer
     uncover-locals
@@ -94,7 +94,7 @@
       remove-complex-opera*
       sequentialize-let
       impose-calling-conventions
-      canonicalize-bind
+      normalize-bind
       select-instructions
       expose-allocation-pointer
       uncover-locals
