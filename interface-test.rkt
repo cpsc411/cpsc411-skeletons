@@ -9,7 +9,7 @@
    '(check-values-lang
      uniquify
      sequentialize-let
-     canonicalize-bind
+     normalize-bind
      select-instructions
      uncover-locals
      assign-fvars
