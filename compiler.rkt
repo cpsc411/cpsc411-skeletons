@@ -9,7 +9,7 @@
  uniquify
  sequentialize-let
  impose-calling-conventions
- canonicalize-bind
+ normalize-bind
  select-instructions
  assign-homes-opt
  uncover-locals
@@ -50,7 +50,7 @@
     uniquify
     sequentialize-let
     impose-calling-conventions
-    canonicalize-bind
+    normalize-bind
     select-instructions
     ;uncover-locals
     ;undead-analysis
@@ -84,7 +84,7 @@
       uniquify
       sequentialize-let
       impose-calling-conventions
-      canonicalize-bind
+      normalize-bind
       select-instructions
       uncover-locals
       undead-analysis

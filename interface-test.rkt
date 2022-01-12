@@ -10,7 +10,7 @@
      uniquify
      sequentialize-let
      impose-calling-conventions
-     canonicalize-bind
+     normalize-bind
      select-instructions
      assign-homes-opt
      uncover-locals
