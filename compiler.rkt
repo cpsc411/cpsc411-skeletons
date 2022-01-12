@@ -11,7 +11,7 @@
 
  uniquify
  sequentialize-let
- canonicalize-bind
+ normalize-bind
  select-instructions
  uncover-locals
  undead-analysis
@@ -71,7 +71,7 @@
     ;check-values-lang
     uniquify
     sequentialize-let
-    canonicalize-bind
+    normalize-bind
     select-instructions
     assign-homes-opt
     optimize-predicates
@@ -94,7 +94,7 @@
 
     uniquify
     sequentialize-let
-    canonicalize-bind
+    normalize-bind
     select-instructions
     uncover-locals
     undead-analysis
