@@ -52,7 +52,7 @@
 (define (interp-paren-x64 p)
   ; Environment (List-of (paren-x64-v2 Statements)) -> Integer
   (define (eval-instruction-sequence env sls)
-    (if (null? sls)
+    (if (empty? sls)
         (dict-ref env 'rax)
         (TODO "Implement the fold over a sequence of Paren-x64-v2 /s/.")))
 
