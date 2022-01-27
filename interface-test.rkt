@@ -6,11 +6,7 @@
 
   (check-import-list
    "compiler.rkt"
-   '(interp-paren-x64
-     check-paren-x64
-     interp-values-lang
-
-     check-values-lang
+   '(check-values-lang
      uniquify
      sequentialize-let
      normalize-bind
@@ -27,5 +23,5 @@
      implement-fvars
      generate-x64
 
-     compile-a2
-     compile-a3)))
+     compile-m2
+     compile-m3)))
