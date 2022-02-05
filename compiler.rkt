@@ -165,12 +165,12 @@
      (cons wrap-x64-boilerplate #f)))
 
   (current-pass-list
-   (map first pass-map))
+   (map car pass-map))
 
   (run-tests
    (v4-public-test-suite
     (current-pass-list)
-    (map rest pass-map)
+    (map cdr pass-map)
 
     link-paren-x64
     interp-paren-x64
