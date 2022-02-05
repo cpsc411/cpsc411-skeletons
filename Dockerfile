@@ -13,5 +13,7 @@ WORKDIR /app/racket
 RUN make PKGS="base" PREFIX="/usr/" unix-style
 
 RUN raco pkg install --auto compiler-lib plai-lib https://github.com/cpsc411/cpsc411-pub.git?path=cpsc411-lib#2021w2
+ADD "https://api.github.com/repos/cpsc411/cpsc411-pub/commits/2021w2?per_page=1" latest_commit
+RUN raco pkg update cpsc411-lib
 
 WORKDIR /app/workspace
