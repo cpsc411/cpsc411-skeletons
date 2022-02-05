@@ -9,6 +9,7 @@
    '(link-paren-x64
      interp-paren-x64
      interp-values-lang
+     check-values-lang
 
      uniquify
      sequentialize-let
