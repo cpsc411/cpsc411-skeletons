@@ -9,8 +9,8 @@
    '(check-values-lang
      uniquify
      sequentialize-let
-     impose-calling-conventions
      normalize-bind
+     impose-calling-conventions
      select-instructions
      assign-homes-opt
      uncover-locals
@@ -25,7 +25,4 @@
      patch-instructions
      implement-fvars
 
-     generate-x64
-
-     interp-paren-x64
-     link-paren-x64)))
+     generate-x64)))

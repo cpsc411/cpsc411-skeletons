@@ -8,8 +8,8 @@
  check-values-lang
  uniquify
  sequentialize-let
- impose-calling-conventions
  normalize-bind
+ impose-calling-conventions
  select-instructions
  assign-homes-opt
  uncover-locals
@@ -23,79 +23,96 @@
  flatten-program
  patch-instructions
  implement-fvars
-
- generate-x64
-
- interp-paren-x64
- link-paren-x64)
+ generate-x64)
 
 ;; TODO: Fill in.
 ;; You'll want to merge milestone-4 code in
+
+;; Stubs; remove or replace with your definitions.
+(define-values (check-values-lang
+                uniquify
+                sequentialize-let
+                normalize-bind
+                impose-calling-conventions
+                select-instructions
+                assign-homes-opt
+                uncover-locals
+                undead-analysis
+                conflict-analysis
+                assign-registers
+                replace-locations
+                optimize-predicates
+                expose-basic-blocks
+                resolve-predicates
+                flatten-program
+                patch-instructions
+                implement-fvars
+                generate-x64)
+  (values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values
+   values))
 
 (module+ test
   (require
    rackunit
    rackunit/text-ui
+   cpsc411/langs/v5
    cpsc411/test-suite/utils
-   cpsc411/test-suite/public/a5
+   cpsc411/test-suite/public/v5
    errortrace)
 
-  ;; You can modify this pass list, e.g., by adding other
-  ;; optimization, debugging, or validation passes.
+  ;; You can modify this pass list, e.g., by adding check-assignment, or other
+  ;; debugging and validation passes.
   ;; Doing this may provide additional debugging info when running the rest
   ;; suite.
+  (define pass-map
+    (list
+     (cons check-values-lang interp-values-lang-v5)
+     (cons uniquify interp-values-lang-v5)
+     (cons sequentialize-let interp-values-unique-lang-v5)
+     (cons normalize-bind interp-imp-mf-lang-v5)
+     (cons impose-calling-conventions interp-proc-imp-cmf-lang-v5)
+     (cons select-instructions interp-imp-cmf-lang-v5)
+
+     (cons uncover-locals interp-asm-pred-lang-v5)
+     (cons undead-analysis interp-asm-pred-lang-v5/locals)
+     (cons conflict-analysis interp-asm-pred-lang-v5/undead)
+     (cons assign-registers interp-asm-pred-lang-v5/conflicts)
+     (cons replace-locations interp-asm-pred-lang-v5/assignments)
+
+     (cons optimize-predicates interp-nested-asm-lang-v5)
+     (cons expose-basic-blocks interp-nested-asm-lang-v5)
+     (cons resolve-predicates interp-block-pred-lang-v5)
+     (cons flatten-program interp-block-asm-lang-v5)
+     (cons patch-instructions interp-para-asm-lang-v5)
+     (cons implement-fvars interp-paren-x64-fvars-v5)
+     (cons generate-x64 interp-paren-x64-v5)
+     (cons wrap-x64-run-time #f)
+     (cons wrap-x64-boilerplate #f)))
+
   (current-pass-list
-   (list
-    check-values-lang
-    uniquify
-    sequentialize-let
-    impose-calling-conventions
-    normalize-bind
-    select-instructions
-    ;uncover-locals
-    ;undead-analysis
-    ;conflict-analysis
-    ;assign-registers
-    ;replace-locations
-    assign-homes-opt
-    optimize-predicates
-    expose-basic-blocks
-    resolve-predicates
-    flatten-program
-    patch-instructions
-    implement-fvars
+   (map car pass-map))
 
-    ;check-paren-x64
-    generate-x64
+  (run-tests
+   (v5-public-test-suite
+    (current-pass-list)
+    (map cdr pass-map)
 
-    wrap-x64-run-time
-    wrap-x64-boilerplate))
-
-  ;; Toggle to #f to enable fragile tests
-  (parameterize ([current-enable-grading #t])
-    (run-tests
-     (a5-public-test-suite
-      (current-pass-list)
-
-      link-paren-x64
-      interp-paren-x64
-
-      check-values-lang
-      uniquify
-      sequentialize-let
-      impose-calling-conventions
-      normalize-bind
-      select-instructions
-      uncover-locals
-      undead-analysis
-      conflict-analysis
-      assign-registers
-      replace-locations
-      assign-homes-opt
-      optimize-predicates
-      expose-basic-blocks
-      resolve-predicates
-      flatten-program
-      patch-instructions
-      implement-fvars
-      generate-x64))))
+    check-values-lang)))
