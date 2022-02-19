@@ -111,7 +111,7 @@
    cpsc411/test-suite/public/v4
    racket/engine)
 
-  ;; Milliseconds (() -> any_1) (() -> any_2) -> any_1 or any_2
+  ;; Milliseconds (any/c -> any_1) (() -> any_2) -> any_1 or any_2
   ;; Runs proc in an engine, returning its result, or calling the failure
   ;; continuation of proc fails to finish before timeout-ms milliseconds.
   (define (run-with-timeout timeout-ms proc
@@ -122,7 +122,7 @@
         (fail-k))
       (engine-result e)))
 
-  ;; (() -> any/c) Milliseconds -> void
+  ;; (any/c -> any/c) Milliseconds -> void
   ;; Checks that th *does* timeout after ms milliseconds
   ;; Silently passes or fails with (fail-check) if the test fails
   (define-check (check-timeout? th ms)
@@ -130,10 +130,10 @@
       (fail-check)))
 
   (check-timeout?
-   (thunk
+   (lambda (_)
     (interp-paren-x64
      '(begin
-        (define L.f.10 (jump L.f.10)))))
+        (with-label L.f.10 (jump L.f.10)))))
    2000)
 
   ;; You can modify this pass list, e.g., by adding check-assignment, or other
