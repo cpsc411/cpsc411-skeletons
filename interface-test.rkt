@@ -6,8 +6,7 @@
 
   (check-import-list
    "compiler.rkt"
-   '(check-values-lang
-     uniquify
+   '(uniquify
      sequentialize-let
      impose-calling-conventions
      normalize-bind
@@ -27,6 +26,4 @@
      flatten-program
      patch-instructions
 
-     generate-x64
-
-     interp-paren-x64)))
+     generate-x64)))
