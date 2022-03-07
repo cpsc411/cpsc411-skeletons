@@ -2,7 +2,7 @@
 
 (require
  cpsc411/compiler-lib
- cpsc411/ptr-run-time)
+ cpsc411/2c-run-time)
 
 (provide
  uniquify
