@@ -6,15 +6,13 @@
 
   (check-import-list
    "compiler.rkt"
-   '(interp-paren-x64
-     check-exprs-lang
-     uniquify
+   '(uniquify
      implement-safe-primops
      specify-representation
      remove-complex-opera*
      sequentialize-let
-     impose-calling-conventions
      normalize-bind
+     impose-calling-conventions
      select-instructions
      uncover-locals
      undead-analysis
