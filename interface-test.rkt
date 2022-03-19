@@ -6,8 +6,7 @@
 
   (check-import-list
    "compiler.rkt"
-   '(check-exprs-lang
-     uniquify
+   '(uniquify
      implement-safe-primops
      specify-representation
      remove-complex-opera*
