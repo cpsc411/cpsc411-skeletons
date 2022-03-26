@@ -6,7 +6,7 @@
 
   (check-import-list
    "compiler.rkt"
-   '(check-exprs-lang
+   '(#;check-exprs-lang
      uniquify
      implement-safe-primops
      implement-safe-call
