@@ -2,11 +2,14 @@
 
 (require
  cpsc411/compiler-lib
- cpsc411/ptr-run-time)
+ cpsc411/ptr-run-time
+ cpsc411/langs/v8
+ cpsc411/langs/v9
+ cpsc411/langs/v11)
 
 (provide
- uniquify
  expand-macros
+ uniquify
  implement-safe-primops
  implement-safe-call
  define->letrec
@@ -42,7 +45,7 @@
  generate-x64)
 
 ;; TODO: Fill in.
-;; You'll want to merge milestone-8 code in
+;; You'll want to merge milestone-9 code in
 
 ;; Stubs; remove or replace with your definitions.
 (define-values (uniquify
@@ -124,8 +127,8 @@
 (define pass-map
   (list
    #;(cons check-exprs-lang #f)
-   (cons uniquify interp-racketish-surface)
-   (cons expand-macros interp-racketish-unique)
+   (cons expand-macros interp-racketish-surface)
+   (cons uniquify interp-exprs-lang-v9)
    (cons implement-safe-primops interp-exprs-unique-lang-v9)
    (cons implement-safe-call interp-exprs-unsafe-data-lang-v9)
    (cons define->letrec interp-exprs-unsafe-lang-v9)
