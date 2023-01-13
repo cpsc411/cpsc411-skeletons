@@ -10,8 +10,8 @@
  wrap-x64-run-time
  wrap-x64-boilerplate)
 
-(define-syntax-rule (TODO stx)
-  (error "unfinished skeleton"))
+(define-syntax-rule (TODO . stx)
+  (error "Unfinished skeleton"))
 
 ;; Optional; if you choose not to complete, implement a stub that returns the input
 (define (check-paren-x64-init p)
