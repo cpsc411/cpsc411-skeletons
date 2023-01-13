@@ -33,7 +33,7 @@ EOS
 ; Takes an x64 Program, compiles it to an executable, and returns the name of
 ; the generated executable.
 (define (compile str)
-  (TODO "Read the implementation of compile, then remove this TODO.")
+  (TODO "Read the implementation of this procedure (compile), then remove this TODO.")
   (define p (path->string (make-temporary-file "~a.s")))
 
   (define o (string-replace p ".s" ".o"))
@@ -49,7 +49,7 @@ EOS
 ; Takes an x64 Program, compiles it to an executable, and runs it, returning
 ; the error code.
 (define (execute str)
-  (TODO "Read the implementation of execute, then remove this TODO.")
+  (TODO "Read the implementation of this procedure (execute), then remove this TODO.")
   (system/exit-code! (compile str) number?))
 
 (module+ test
