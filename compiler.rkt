@@ -81,7 +81,6 @@
   (TODO "Design and implement link-paren-x64 for Exercise 2."))
 
 ;; Exercise 3
-;; paren-x64-rt-v4 -> int64
 (define (interp-paren-x64 p)
 
   ;; dict-of(loc -> int64) Natural (listof statement) statement -> int64
