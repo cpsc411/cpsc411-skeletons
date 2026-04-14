@@ -114,5 +114,5 @@
                      interp-paren-x64-v2
                      #f #f))
 
-  (run-tests (v3-public-test-sutie (current-pass-list) interp-ls))
+  (run-tests (v3-public-test-suite (current-pass-list) interp-ls))
   (run-tests (v2-reg-alloc-public-test-suite undead-analysis conflict-analysis assign-registers)))
